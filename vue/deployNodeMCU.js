@@ -98,9 +98,14 @@ function getCcode() {
 }
 
 
-//include all html files directly do code
+//include all html files directly to code
 glob.sync("dist/**/*.html").forEach(file => {
     parseFile(file, "text/html");
+});
+
+//include all json files directly to code
+glob.sync("dist/**/*.json").forEach(file => {
+    parseFile(file, "application/json");
 });
 
 //add all js files as static files
